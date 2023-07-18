@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./fonts.css";
 @import url("https://fonts.cdnfonts.com/css/butler");
-@import url("https://fonts.google.com/specimen/Karla");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -48,6 +49,11 @@ h1 {
   font-family: "Butler", sans-serif;
   font-weight: bold;
 }
-p {
+
+.force-line-break {
+  white-space: pre-line;
+}
+p,
+h3 {
   font-family: "Karla", sans-serif;
 }

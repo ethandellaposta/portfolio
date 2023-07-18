@@ -16,6 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* <style>@import url('https://fonts.cdnfonts.com/css/karla');</style> */}
+
       <body className={inter.className}>{children}</body>
     </html>
   );
