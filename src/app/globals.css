@@ -54,6 +54,7 @@ h1 {
   white-space: pre-line;
 }
 p,
-h3 {
+h3,
+h2 {
   font-family: "Karla", sans-serif;
 }
