@@ -45,7 +45,8 @@ body {
   background: rgb(var(--background-rgb));
 }
 
-h1 {
+h1,
+.font-butler {
   font-family: "Butler", sans-serif;
   font-weight: bold;
 }
