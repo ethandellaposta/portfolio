@@ -8,19 +8,16 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        y1: "35rem",
-        y2: "40rem",
-        y3: "45rem",
-        y4: "50rem",
-        y5: "55rem",
-        y6: "60rem",
-        y7: "65rem",
-        y8: "70rem",
-        y9: "75rem",
-        y10: "80rem",
+        112: "28rem",
+        128: "32rem",
+        144: "36rem",
+        160: "40rem",
+      },
+      colors: {
+        "gradient-purple": "rgb(134, 25, 143)",
       },
       translate: {},
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
