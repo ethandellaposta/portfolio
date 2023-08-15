@@ -5,7 +5,7 @@
 @import "./fonts.css";
 @import url("https://fonts.cdnfonts.com/css/butler");
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
 }
@@ -15,11 +15,11 @@
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 0, 0, 0;
   }
-}
+} */
 
 .mesh {
-  background-color: rgb(134, 25, 143);
-  background-image: radial-gradient(
+  /* background-color: rgb(134, 25, 143);
+    background-image: radial-gradient(
       at 22% 27%,
       rgb(29, 78, 216) 0,
       transparent 100%
@@ -27,7 +27,39 @@
     radial-gradient(at 50% 59%, rgb(165, 243, 252) 0, transparent 68%),
     radial-gradient(at 85% 85%, rgb(254, 215, 170) 0, transparent 67%),
     radial-gradient(at 81% 58%, rgb(217, 249, 157) 0, transparent 62%);
-  position: relative;
+  */
+  background-color: #1d4ed8;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.off-white {
+  background-color: black;
+  height: 1000px;
+  opacity: 0.025;
+}
+
+.blue {
+  background-color: #1d4ed8;
+  height: 700px;
+  opacity: 0.05;
+}
+
+.purple {
+  background-color: rgb(194 65 12);
+  height: 400px;
+  opacity: 0.2;
+}
+
+.skew {
+  transform: skewY(-6deg);
+}
+
+.skew-opposite {
+  transform: skewY(6deg);
+}
+.skew-reverse {
+  transform: skewY(6deg) translateY(-5rem);
 }
 
 .mesh-grain-img {
@@ -38,6 +70,15 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+.project {
+  scroll-snap-align: center;
 }
 
 body {
@@ -56,6 +97,43 @@ h1,
 }
 p,
 h3,
-h2 {
+h2,
+a,
+li,
+textarea {
   font-family: "Karla", sans-serif;
+}
+
+.shadow-even {
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.075);
+}
+
+.shadow-even-dark {
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+:root {
+  --scroll: 0;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+  translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75);
+}
+
+#name {
+  /* slide out to right after 25 */
+  transform: translateX(calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75));
+  opacity: calc(1 - --scroll / 30);
+}
+
+#header-bullets {
+  /* slide out to left after 25*/
+  transform: translateX(calc(1% * (max(var(--scroll), 25) - 25) * 100 / 75));
+}
+
+#skills {
+  /* scale from 75% to 100% from --scroll of 25 to 50 */
+  transform: scale(calc(0.75 + (max(var(--scroll), 25) - 25) * 0.25 / 25));
 }
