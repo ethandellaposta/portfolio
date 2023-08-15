@@ -1,26 +1,39 @@
 interface TimelineLabelProps {
-  title?: string;
-  year?: string;
+  company?: string;
+  year?: number;
   role?: string;
+  mesh?: boolean;
+  color?: "white" | "black" | undefined;
 }
 
-export const ExperienceTimelineLabel = (props: TimelineLabelProps) => {
+export const ExperienceTimelineLabel = function (props: TimelineLabelProps) {
   return (
-    <div className="w-full flex flex-row justify-stretch items-center gap-16">
-      {props.title ? (
+    <div className="flex flex-row items-center w-full pt-24 pb-24 justify-stretch">
+      {props.company ? (
         <div className="flex flex-col items-start ">
-          <h2 className="text-white text-6xl">{props.title}</h2>
+          <h2 style={{ color: props.color }} className="text-6xl">
+            {props.company}
+          </h2>
           {props.role ? (
-            <p className="text-white text-lg opacity-50 whitespace-nowrap font-extralight mt-4">
+            <p
+              style={{ color: props.color }}
+              className="mt-4 text-lg opacity-50 whitespace-nowrap font-extralight"
+            >
               {props.role}
             </p>
           ) : null}
         </div>
       ) : null}
       {props.year ? (
-        <div className="flex flex-col w-full space-y-2">
-          <div className="border-b-2 border-white border-opacity-20"></div>
-          <p className="text-white text-3xl place-self-end opacity-80">
+        <div className="flex flex-col w-full space-y-2 ">
+          <div
+            style={{ borderColor: props.color, opacity: 0.2 }}
+            className="border-b-2 rounded-full"
+          ></div>
+          <p
+            style={{ color: props.color }}
+            className="text-3xl place-self-end opacity-80"
+          >
             {props.year}
           </p>
         </div>
