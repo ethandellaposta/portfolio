@@ -83,7 +83,8 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  /* background: rgb(var(--background-rgb)); */
+  transition: background-image 300ms;
 }
 
 h1,
@@ -119,21 +120,14 @@ textarea {
 #header {
   position: sticky;
   top: 0;
-  translate: 0 calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75);
-}
-
-#name {
-  /* slide out to right after 25 */
-  transform: translateX(calc(-1% * (max(var(--scroll), 25) - 25) * 100 / 75));
-  opacity: calc(1 - --scroll / 30);
-}
-
-#header-bullets {
-  /* slide out to left after 25*/
-  transform: translateX(calc(1% * (max(var(--scroll), 25) - 25) * 100 / 75));
+  transform: scale(calc(1 - (max(var(--scroll), 35) - 35) * 0.5 / 25));
 }
 
 #skills {
-  /* scale from 75% to 100% from --scroll of 25 to 50 */
-  transform: scale(calc(0.75 + (max(var(--scroll), 25) - 25) * 0.25 / 25));
+  /* scale from 75% to 100% from --scroll of 35 to 60 */
+  transform: scale(calc(0.75 + (max(var(--scroll), 35) - 35) * 0.25 / 25));
+  background-image: none;
+  background-repeat: repeat;
 }
+
+

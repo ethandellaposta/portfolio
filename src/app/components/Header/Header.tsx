@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HeaderNav } from "./HeaderNav";
 
 export const Header = function () {
@@ -7,7 +8,8 @@ export const Header = function () {
       <div className="flex flex-col justify-start md:pt-20 lg:pt-24 lg:flex-row gap-14 md:gap-28">
         {/* Photo */}
         <HeaderNav />
-        <img
+        <Image
+          alt="Avatar"
           className="object-cover w-40 h-40 duration-200 rounded-full drop-shadow-md lg:w-48 lg:h-48 aspect-square"
           src="avatar.jpg"
         />

@@ -4,6 +4,7 @@ import { GlobalContext } from "../../common/context/global/GlobalContext";
 import { ExperienceTimelineProjectDetails } from "./ExperienceTimelineProjectDetails";
 import { ProjectDetailsProps } from "@/app/content/data";
 import AnimateHeight from "react-animate-height";
+import Image from "next/image";
 
 interface ProjectProps {
   title: string;
@@ -84,13 +85,14 @@ export const ExperienceTimelineProject = (props: ProjectProps) => {
                 alignItems: "stretch",
               }}
             >
-              <img
+              <Image
+                alt="Project image"
                 onClick={onClose}
                 className="z-20 border rounded-md "
                 style={{
                   objectFit: "cover",
                 }}
-                src={imageURL}
+                src={imageURL as string}
               />
             </div>
           ) : (
@@ -102,7 +104,10 @@ export const ExperienceTimelineProject = (props: ProjectProps) => {
               }}
               className="flex flex-row items-center justify-center rounded-md shadow-xl lg:w-1/2 h-96 lg:h-auto"
             >
-              <img src={props.icon ? props.icon : "/shopify.png"} />
+              <Image
+                src={props.icon ? props.icon : "/shopify.png"}
+                alt="Project image"
+              />
             </div>
           )}
         </div>
