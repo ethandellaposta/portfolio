@@ -64,8 +64,10 @@ export function ExperienceTimelineProjectDetails(props: {
               style={{ listStylePosition: "outside" }}
               className="mx-4 my-8 list-disc"
             >
-              {(detail.content as string[]).map((bullet) => (
-                <li className="text-lg">{bullet}</li>
+              {(detail.content as string[]).map((bullet, i) => (
+                <li key={i} className="text-lg">
+                  {bullet}
+                </li>
               ))}
             </ul>
           );

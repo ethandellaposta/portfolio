@@ -41,11 +41,13 @@ export const ExperienceTimeline = function (props: ExperienceTimelineProps) {
             if (item.type === "project") {
               item = item as ProjectProps;
               return (
-                <ExperienceTimelineProject
-                  index={index}
-                  isHighlighted={globalContext.highlightedProject === index}
-                  {...item}
-                />
+                <div key={index}>
+                  <ExperienceTimelineProject
+                    index={index}
+                    isHighlighted={globalContext.highlightedProject === index}
+                    {...item}
+                  />
+                </div>
               );
             } else if (item.type === "job") {
               item = item as JobProps;
@@ -76,7 +78,12 @@ export const ExperienceTimeline = function (props: ExperienceTimelineProps) {
             } else if (item.type === "year") {
               item = item as YearProps;
               return (
-                <ExperienceTimelineLabel year={item.year} color={item.color} />
+                <div key={index}>
+                  <ExperienceTimelineLabel
+                    year={item.year}
+                    color={item.color}
+                  />
+                </div>
               );
             } else {
               return null;

@@ -214,6 +214,13 @@ export async function experience_timeline_items(): Promise<ExperienceTimelineIte
   ]
 }
 
+export const side_projects = [
+  {
+    title: "Platformer game p5.js",
+    url: "https://ethandellaposta.github.io/platformer-game-p5/"
+  }
+]
+
 /**
 
 
