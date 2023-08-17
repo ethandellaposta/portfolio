@@ -65,8 +65,8 @@ export const ExperienceTimelineProject = (props: ProjectProps) => {
             </div>
             <div className="mb-6">
               <ul className="mx-4 list-disc list-outside">
-                {props.highlights.map((h) => (
-                  <li>{h}</li>
+                {props.highlights.map((h, i) => (
+                  <li key={i}>{h}</li>
                 ))}
               </ul>
             </div>
